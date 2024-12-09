@@ -1,13 +1,18 @@
 import React, { useState } from "react";
+import { FruitType } from "./typescript/FruitType";
 
-export default function FruitForm({ handleAdd }) {
+type FruitFormProps = {
+  handleAdd: (fruitAAjouter: FruitType) => void;
+};
+
+export default function FruitForm({ handleAdd }: FruitFormProps) {
   //State
   const [nouveauFruit, setNouveauFruit] = useState("");
 
   //Comportement
   /*3-Soumission du formulaire*/
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event: React.FormEventHandler<HTMLFormElement>) => {
+    event.preventDefault();
     //console.log("handleSubmit!", e);
 
     // Copie du state
@@ -24,7 +29,7 @@ export default function FruitForm({ handleAdd }) {
   };
 
   /*4-Changement de L'etat de formulaires*/
-  const handleChange = (event) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     console.log("handleChange!", event.target.value);
     setNouveauFruit(event.target.value);
   };

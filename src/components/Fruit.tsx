@@ -1,10 +1,11 @@
-function Fruit({
-  fruitInfo,
-  onClick,
-}: {
-  fruitInfo: { id: number; name: string };
+import { FruitType } from "./typescript/FruitType";
+
+type FruitProps = {
+  fruitInfo: FruitType;
   onClick: () => void;
-}) {
+};
+
+export default function Fruit({ fruitInfo, onClick }: FruitProps) {
   //State
 
   //Comportement
@@ -26,5 +27,3 @@ function Fruit({
     </div>
   );
 }
-
-export default Fruit;
