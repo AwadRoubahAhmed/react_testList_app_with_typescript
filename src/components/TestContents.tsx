@@ -7,7 +7,7 @@ export default function TestContents() {
   //Code JavaScript;
 
   // State 1 (etat, données)
-  const [fruits, setFruits] = useState([
+  const [fruits, setFruits] = useState<FruitType[]>([
     { id: 1, name: "Apple" },
     { id: 2, name: "Orange" },
     { id: 3, name: "Banana" },
