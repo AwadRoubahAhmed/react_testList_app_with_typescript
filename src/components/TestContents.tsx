@@ -58,6 +58,7 @@ export default function TestContents() {
               fruitInfo={fruit}
               onClick={() => handleDelete(fruit.id)}
               //onClick={() => afficherFruitPrefere(fruit.name)}
+              backgroundColor="red"
               key={fruit.id}
             />
           ))}
